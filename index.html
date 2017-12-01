@@ -4,13 +4,26 @@
     <style>
       body {
        display: grid;
-       grid-template-rows: 1fr 1fr 1fr;
-       grid-template-columns: 1fr 1fr 1fr;
+       grid-template-rows: 1fr 1fr 1fr 1fr;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
        grid-gap: 20px;
+      }
+      body:nth-child(odd) {
+       background-color: grey; 
+      }
+      body:nth-child(even) {
+       background-color: darkgrey; 
       }
     </style>
   </head>
   <body>
-    
+    <div class="heading"></div>
+    <div class="purpose"></div>
+    <div class="hypothesis"></div>
+    <div class="procedures"></div>
+    <div class="dataGraphics"></div>
+    <div class="results"></div>
+    <div class="conclusions"></div>
+    <div class="purpose"></div>
   </body>
 </html>
