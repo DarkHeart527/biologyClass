@@ -10,6 +10,11 @@
        grid-template-rows: 1fr 1fr 1fr 1fr;
        grid-template-columns: 1fr 1fr 1fr 1fr;
        grid-gap: 10px;
+       margin: 0px;
+      }
+      h1, h2, h3, h4, h5, h6, p, div {
+       font-size: 5px;
+       transition: 1s;
       }
       .heading, .purpose, .hypothesis, .procedures, .dataGraphics, .results, .conclusions, .research {
        background-color: black;
@@ -49,7 +54,42 @@
     <div class="procedures"></div>
     <div class="dataGraphics"></div>
     <div class="results"></div>
-    <div class="conclusion"></div>
+    <div class="conclusion">Some text</div>
     <div class="research"></div>
   </body>
+  <script>try {
+  	function openPage(pageClass) {
+     var page = document.getElementsByClassName(pageClass);
+     var closeElement = doucment.getElementById('closePage');
+     page.onclick = null;
+    }
+    for (let i = 0; i < document.getElementsByTagName('div').length; i++) 
+    {
+     var doc = document.getElementsByTagName('div')[i];
+     doc.onclick = function() {
+     this.style.transition = '1s';
+     this.style.position = 'absolute';
+     this.style.display = 'block';
+     var animationFrame = setInterval( function() {
+      var width2 = this.style.width;
+      var height2 = this.style.height;
+      var newWidth = 0;
+      for (let a = 0; a < width2.length; a++) {
+       if (width2[a] == 'p' | width2[a] == 'x') {
+        
+       } else {
+        newWidth = newWidth + width2[a];
+       }
+      }
+      width2 = newWidth;
+     }, 50);
+      this.style.width = newWidth + 'px';
+      this.style.height = '100px';
+     this.style.fontSize = '25px';
+}
+    }
+    } catch(err) {
+     document.write(err);
+    }
+  </script>
 </html>
