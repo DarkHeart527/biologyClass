@@ -8,11 +8,14 @@
        display: grid;
        background-color: white;
        grid-template-rows: 1fr 1fr 1fr 1fr;
-       grid-template-columns: 1fr 1fr 1fr;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
        grid-gap: 10px;
       }
       .heading, .purpose, .hypothesis, .procedures, .dataGraphics, .results, .conclusions, .reccomendations {
        background-color: black;
+      }
+      .heading {
+       grid-area: 1 / span 4; 
       }
     </style>
   </head>
