@@ -86,9 +86,13 @@
         closeBtn.style.color = 'red';
         closeBtn.innerHTML = 'X';
         closeBtn.style.right = '10px';
-        closeBtn.style.top = '10px';
-        closeBtn.style.fontSize = '35px';
+        closeBtn.style.top = '8px';
+        closeBtn.style.fontSize = '50px';
         this.appendChild(closeBtn);
+        closeBtn.onclick = function() {
+          this.ParentElement.style = '';
+          this.remove();
+        }
       }
     }
     } catch(err) {
