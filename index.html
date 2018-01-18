@@ -90,10 +90,10 @@
         this.appendChild(closeBtn);
         closeBtn.onclick = function() {
           this.parentElement.style = '';
-          this.remove();
-          for (let i = 0; i < document.getElementsByTagName('div').length; i++) {
-            document.getElementsByTagName('div')[i].style = '';
+          for (let i2 = 0; i2 < document.getElementsByTagName('div').length; i2++) {
+            document.getElementsByTagName('div')[i2].style = '';
           }
+          this.remove();
         }
         closeBtn.style.cursor = 'pointer';
       }
