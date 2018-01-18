@@ -80,7 +80,15 @@
       var doc = document.getElementsByTagName('div')[i];
       doc.onclick = function() {
         this.style = `width: ${window.innerWidth};height: ${window.innerHeight};position: absolute;`;
-        document.getElementById('newStyle').innerHTML = ".heading {font-size: 100px;}"
+        document.getElementById('newStyle').innerHTML = ".heading {font-size: 250px;}";
+        var closeBtn = document.createElement('div');
+        closeBtn.style.position = 'absolute';
+        closeBtn.style.color = 'red';
+        closeBtn.innerHTML = 'X';
+        closeBtn.style.right = '10px';
+        closeBtn.style.top = '10px';
+        closeBtn.style.fontSize = '35px';
+        this.appendChild(closeBtn);
       }
     }
     } catch(err) {
