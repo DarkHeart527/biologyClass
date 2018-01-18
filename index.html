@@ -69,7 +69,6 @@
      var page = document.getElementsByClassName(pageClass);
      var closeElement = doucment.getElementById('closePage');
      page.onclick = null;
-    }
     for (let i = 0; i < document.getElementsByTagName('div').length; i++) 
     {
      var doc = document.getElementsByTagName('div')[i];
@@ -93,6 +92,7 @@
       this.style.width = newWidth + 'px';
       this.style.height = '100px';
      this.style.fontSize = '25px';
+    }
 }
     }
     } catch(err) {
