@@ -69,31 +69,12 @@
      var page = document.getElementsByClassName(pageClass);
      var closeElement = doucment.getElementById('closePage');
      page.onclick = null;
-    for (let i = 0; i < document.getElementsByTagName('div').length; i++) 
-    {
-     var doc = document.getElementsByTagName('div')[i];
-     doc.onclick = function() {
-     this.style.transition = '1s';
-     this.style.position = 'absolute';
-     this.style.display = 'block';
-     var animationFrame = setInterval( function() {
-      var width2 = window.innerWidth;
-      var height2 = window.innerHeight;
-      var newWidth = '100px';
-      for (let a = 0; a < width2.length; a++) {
-       if (width2[a] == 'p' | width2[a] == 'x') {
-        
-       } else {
-        newWidth = newWidth + width2[a];
-       }
-      }
-      width2 = newWidth;
-     }, 50);
-      this.style.width = newWidth + 'px';
-      this.style.height = '100px';
-     this.style.fontSize = '25px';
     }
-}
+    for (let i = 0; i < document.getElementsByTagName('div').length; i++) {
+      var doc = document.getElementsByTagName('div')[i];
+      doc.onclick = function() {
+        this.style = 'width: 100%;height: 100%;position: absolute;';
+      }
     }
     } catch(err) {
      document.write(err);
