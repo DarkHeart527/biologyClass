@@ -91,6 +91,9 @@
         closeBtn.onclick = function() {
           this.parentElement.style = '';
           this.remove();
+          for (let i = 0; i < document.getElementsByTagName('div').length; i++) {
+            document.getElementsByTagName('div')[i].style = '';
+          }
         }
         closeBtn.style.cursor = 'pointer';
       }
