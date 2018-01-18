@@ -4,6 +4,7 @@
     <style>
       * {
        transition: 2s; 
+       cursor: default;
       }
       body {
        width: 100%;
@@ -44,14 +45,12 @@
       }
       .dataGraphics {
        grid-area: span 3 / span 2;
-       background-color: yellow;
       }
       .results {
        grid-area: 2 / 4;
       }
       .conclusion {
        grid-area: 4 / 4;
-       background-color: red;
       }
       .procedures {
        grid-area: 3 / 4;
@@ -93,6 +92,7 @@
           this.parentElement.style = '';
           this.remove();
         }
+        closeBtn.style.cursor = 'pointer';
       }
     }
     } catch(err) {
