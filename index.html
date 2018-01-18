@@ -75,28 +75,31 @@
      var closeElement = doucment.getElementById('closePage');
      page.onclick = null;
     }
-    for (let i = 0; i < document.getElementsByTagName('div').length; i++) {
-      var doc = document.getElementsByTagName('div')[i];
-      doc.onclick = function() {
-        this.onclick = null;
-        this.style = `width: ${window.innerWidth};height: ${window.innerHeight};position: absolute;`;
-        document.getElementById('newStyle').innerHTML = ".heading {font-size: 250px;}";
-        var closeBtn = document.createElement('div');
-        closeBtn.style.position = 'absolute';
-        closeBtn.style.color = 'red';
-        closeBtn.innerHTML = 'X';
-        closeBtn.style.right = '10px';
-        closeBtn.style.top = '8px';
-        closeBtn.style.fontSize = '50px';
-        this.appendChild(closeBtn);
-        closeBtn.onclick = function() {
-          for (let i2 = 0; i2 < document.getElementsByTagName('div').length; i2++) {
-            document.getElementsByTagName('div')[i2].style = '';
+    function applyMethods() {
+      for (let i = 0; i < document.getElementsByTagName('div').length; i++) {
+        var doc = document.getElementsByTagName('div')[i];
+        doc.onclick = function() {
+          this.onclick = null;
+          this.style = `width: ${window.innerWidth};height: ${window.innerHeight};position: absolute;`;
+          document.getElementById('newStyle').innerHTML = ".heading {font-size: 250px;}";
+          var closeBtn = document.createElement('div');
+          closeBtn.style.position = 'absolute';
+          closeBtn.style.color = 'red';
+          closeBtn.innerHTML = 'X';
+          closeBtn.style.right = '10px';
+          closeBtn.style.top = '8px';
+          closeBtn.style.fontSize = '50px';
+          this.appendChild(closeBtn);
+          closeBtn.onclick = function() {
+              for (let i2 = 0; i2 < document.getElementsByTagName('div').length; i2++) {
+              document.getElementsByTagName('div')[i2].style = '';
+            }
+            closeBtn.onclick = null;
+            closeBtn.innerHTML = '';
+            applyMethods();
           }
-          closeBtn.onclick = null;
-          closeBtn.innerHTML = '';
+          closeBtn.style.cursor = 'pointer';
         }
-        closeBtn.style.cursor = 'pointer';
       }
     }
     } catch(err) {
