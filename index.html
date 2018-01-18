@@ -77,6 +77,7 @@
       var doc = document.getElementsByTagName('div')[i];
       doc.onclick = function() {
         this.style = `width: ${window.innerWidth};height: ${window.innerHeight};position: absolute;`;
+        document.getElementById('newStyle').innerHTML = ".heading {font-size: 100px;}"
       }
     }
     } catch(err) {
