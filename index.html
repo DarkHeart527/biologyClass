@@ -76,7 +76,7 @@
     for (let i = 0; i < document.getElementsByTagName('div').length; i++) {
       var doc = document.getElementsByTagName('div')[i];
       doc.onclick = function() {
-        this.style = 'width: 100%;height: 100%;position: absolute;';
+        this.style = `width: ${window.innerWidth};height: ${window.innerHeight};position: absolute;`;
       }
     }
     } catch(err) {
