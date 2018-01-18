@@ -92,7 +92,8 @@
           for (let i2 = 0; i2 < document.getElementsByTagName('div').length; i2++) {
             document.getElementsByTagName('div')[i2].style = '';
           }
-          this.remove();
+          this.onclick = null;
+          this.innerHTML = '';
         }
         closeBtn.style.cursor = 'pointer';
       }
