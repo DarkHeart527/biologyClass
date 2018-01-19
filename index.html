@@ -73,7 +73,8 @@
 	border-radius: 25px;
 	box-shadow: 0px 0px 25px rgba(155, 155, 155, 0.5);
 	font-size: 35px;
-	margin: 0 auto;
+	margin: auto 0;
+	position: absolute;
        }
     </style>
     <style id="newStyle">
@@ -193,7 +194,7 @@
 	setTimeout( function() {
 		msg.style.transition = '2s';
 		msg.top = '50px';
-	}, 500);
+	}, 1000);
 	setTimeout( function() {
 		msg.style.top = '-250px';
 		setTimeout(function() {msg.remove();}, 5000);
