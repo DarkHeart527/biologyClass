@@ -75,6 +75,7 @@
 	font-size: 35px;
 	margin: auto 0;
 	position: absolute;
+	border: 10px solid rgba(155, 155, 155, 0.5);
        }
     </style>
     <style id="newStyle">
@@ -185,7 +186,7 @@
     }
 	applyMethods();
     function newMessage(val) {
-	var msg = document.createElement('div');
+	var msg = document.createElement('nav');
 	msg.className = 'messageBox';
 	msg.innerHTML = val;
 	document.body.appendChild(msg);
