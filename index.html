@@ -76,6 +76,8 @@
 	margin: auto 0;
 	position: absolute;
 	border: 10px solid rgba(100, 100, 100, 0.5);
+	display: grid;
+	justify-self: center;
        }
     </style>
     <style id="newStyle">
@@ -191,7 +193,7 @@
 	var msg = document.createElement('nav');
 	msg.className = 'messageBox';
 	msg.innerHTML = val;
-	document.getElementById('messageContainer').appendChild(msg);
+	document.body.appendChild(msg);
 	msg.style.position = 'absolute';
 	msg.style.top = '-1000px';
 	setTimeout( function() {
