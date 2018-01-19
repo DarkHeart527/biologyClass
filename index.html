@@ -125,6 +125,8 @@
     <div class="considerations">
 	<p class="header">Future Considerations</p>
     </div>
+    <center id="messageContainer">
+    </center>
   </body>
   <script>
     function applyMethods() {
@@ -189,7 +191,7 @@
 	var msg = document.createElement('nav');
 	msg.className = 'messageBox';
 	msg.innerHTML = val;
-	document.body.appendChild(msg);
+	document.getElementById('messageContainer").appendChild(msg);
 	msg.style.position = 'absolute';
 	msg.style.top = '-1000px';
 	setTimeout( function() {
