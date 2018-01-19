@@ -5,6 +5,7 @@
       * {
        transition: 2s; 
        cursor: default;
+	   color: white;
       }
       body { /* 1st One Foamed 1/2 of an inch*/
        width: 100%;
@@ -20,10 +21,11 @@
        font-size: 5px;
        transition: 1s;
       }
-      .heading, .purpose, .hypothesis, .procedures, .dataGraphics, .results, .conclusions, .research {
+      .heading, .purpose, .hypothesis, .procedures, .dataGraphics, .results, .conclusion, .materials, .considerations {
        background-color: black;
+	   box-shadow: 0px 0px 25px blue;
       }
-      .heading:hover, .purpose:hover, .hypothesis:hover, .procedures:hover, .dataGraphics:hover, .results:hover, .conclusions:hover, .research:hover {
+      .heading:hover, .purpose:hover, .hypothesis:hover, .procedures:hover, .considerations:hover, .dataGraphics:hover, .results:hover, .conclusion:hover, .materials:hover {
        box-shadow: 0px 0px 25px red;
       }
       .heading {
@@ -40,7 +42,7 @@
       .hypothesis {
        grid-area: 3 / 1;
       }
-      .research {
+      .materials {
        grid-area: 4 / 1;
       }
       .dataGraphics {
@@ -50,38 +52,96 @@
        grid-area: 2 / 4;
       }
       .conclusion {
-       grid-area: 4 / 4;
-      }
-      .procedures {
        grid-area: 3 / 4;
       }
+	  .considerations {
+	   grid-area: 4 / 4;
+	  }
+	  .header {
+		font-size: 15px;
+		text-align: center;
+		position: relative;
+		top: 0px;
+	  }
+	  .text {
+	   margin-left: 30px;
+	   margin-right: 20px;
+	  }
     </style>
     <style id="newStyle">
     </style>
   </head>
   <body>
-    <div class="heading">Soap</div>
-    <div class="purpose">How would different liquids affect the foaming of soap?</div>
-    <div class="hypothesis">Hypothesis</div>
-    <div class="procedures">Procedures</div>
-    <div class="dataGraphics"></div>
+    <div class="heading">Soap Foam</div>
+    <div class="purpose">
+		<p class="header">Purpose / Question</p>
+		<p class="text">The purpose of this experiment is to find out how different liquids affect the foaming of soap?</p>
+		<p class="text">How would different liquids affect the foaming of soap?</p>
+	</div>
+    <div class="hypothesis">
+		<p class="header">Hypothesis</p>
+		<p class="text">I believe that the <b>olive oil</b> will have the highest foam.</p>
+	</div>
+    <div class="dataGraphics">
+		<p class="header">Procedures</p>
+		<p class="text">
+			1. Pour <b>1/8 of a Cup</b> of <b>water</b> into a <b>bottle or something to shake</b>.
+			2. Pour <b>1/8 of a Cup</b> of <b>soap</b> into a <b>bottle or something to shake</b>.
+			3. Pour <b>1/8 of a Cup</b> of <b>(your liquid)</b> into a <b>bottle or something to shake</b>.
+		</p>
+	</div>
     <div class="results"></div>
-    <div class="conclusion">Some text</div>
-    <div class="research"></div>
+    <div class="conclusion">
+		<p class="header">Conclusion</p>
+		<p class="text">My hypothesis was <b>incorrect</b>, the <b>oil</b> actually was the least foamy. The one that
+		got the highest was <b>distilled vinegar</b>.</p>
+	</div>
+    <div class="materials">
+		<p class="header">Materials</p>
+		<p class="text">
+			1 Measuring Glass<br />
+			Water
+			Soap (I used Dish Soap)
+			Some Stuff To Mix With The Soap
+		</p>
+	</div>
+    <div class="considerations"></div>
   </body>
-  <script>try {
-  	function openPage(pageClass) {
-     var page = document.getElementsByClassName(pageClass);
-     var closeElement = doucment.getElementById('closePage');
-     page.onclick = null;
-    }
+  <script>
     function applyMethods() {
       for (let i = 0; i < document.getElementsByTagName('div').length; i++) {
         var doc = document.getElementsByTagName('div')[i];
         doc.onclick = function() {
           this.onclick = null;
+		  var cls = this.className;
+		  console.log(cls);
           this.style = `width: ${window.innerWidth};height: ${window.innerHeight};position: absolute;`;
-          document.getElementById('newStyle').innerHTML = ".heading {font-size: 250px;}";
+		  switch (cls) {
+			case 'heading':
+				document.getElementById('newStyle').innerHTML = ".heading {font-size: 250px;}; * {z-index: -3;} .heading {z-index: 1} b {color: orange}";
+			break;
+			case 'hypothesis':
+				document.getElementById('newStyle').innerHTML = ".hypothesis .header {font-size: 100px;} .hypothesis .text {font-size: 40px;} * {z-index: -3;} .hypothesis {z-index: 1} .hypothesis b {color: orange}";
+			break;
+			case 'procedures':
+				document.getElementById('newStyle').innerHTML = ".procedures .header {font-size: 100px;} .procedures .text {font-size: 40px;} * {z-index: -3;} .procedures {z-index: 1} .procedures b {color: orange}";
+			break;
+			case 'dataGraphics':
+				document.getElementById('newStyle').innerHTML = ".dataGraphics .header {font-size: 100px;} .dataGraphics .text {font-size: 40px;} * {z-index: -3;} .dataGraphics {z-index: 1} .dataGraphics b {color: orange}";
+			break;
+			case 'results':
+				document.getElementById('newStyle').innerHTML = ".results .header {font-size: 100px;} .results .text {font-size: 40px;} * {z-index: -3;} .results {z-index: 1} .results b {color: orange}";
+			break;
+			case 'conclusion':
+				document.getElementById('newStyle').innerHTML = ".conclusion .header {font-size: 100px;} .conclusion .text {font-size: 40px;} * {z-index: -3;} .conclusion {z-index: 1} .conclusion b {color: orange}";
+			break;
+			case 'materials':
+				document.getElementById('newStyle').innerHTML = ".materials .header {font-size: 100px;} .materials .text {font-size: 40px;} * {z-index: -3;} .materials {z-index: 1} .materials b {color: orange}";
+			break;
+			case 'purpose':
+				document.getElementById('newStyle').innerHTML = ".purpose .header {font-size: 100px;} .purpose .text {font-size: 40px;} * {z-index: -3;} .purpose {z-index: 1} .purpose b {color: orange}";
+			break;
+		  }
           var closeBtn = document.createElement('div');
           closeBtn.style.position = 'absolute';
           closeBtn.style.color = 'red';
@@ -94,16 +154,14 @@
               for (let i2 = 0; i2 < document.getElementsByTagName('div').length; i2++) {
               document.getElementsByTagName('div')[i2].style = '';
             }
-            closeBtn.onclick = null;
-            closeBtn.innerHTML = '';
-            applyMethods();
+			document.getElementById('newStyle').innerHTML = '';
+			closeBtn.remove();
+            setTimeout( function() {applyMethods();}, 250);
           }
           closeBtn.style.cursor = 'pointer';
         }
       }
     }
-    } catch(err) {
-     document.write(err);
-    }
+	applyMethods();
   </script>
 </html>
